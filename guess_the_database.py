@@ -1,27 +1,9 @@
-# Import file from your system
-file_path = input("Enter the path to the file: ")
-print("Selected file:", file_path)
+print("What is the type of above given database -\n1) Relational Database\n2) Non-Relational Database")
+answer = int(input("Enter your guess here... "))
 
+if answer == 2:
+    print("You guessed it right!")
+else:
+    print("Unfortunately your guess was wrong.")
 
-"""### **2. Connect with SQLite Databases"""
-
-# Connect with sqlite database
-# Import necessary libraries
-import sqlite3
-
-database = 'database.sqlite'
-
-conn = sqlite3.connect(database)
-print('Opened data successfully')
-
-# Read SQL query for getting all the tables of database into a dataframe
-# Here SELECT * means select all
-import pandas as pd
-tables = pd.read_sql("""SELECT *
-    FROM sqlite_master
-    WHERE type='table';""", conn)
-tables
-
-
-
-
+print("\nPlease tell your mentor why you guessed this?")
